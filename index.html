@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Digi-Pustaku- Eksplorasi Video Pengelolaan Perpustakaan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link url= https://fonts.google.com/specimen/Luckiest+Guy />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+  <a class="logo" href="#">
+    <div class="logo-icon">📚</div>
+    Libora
+    <img src="ChatGPT Image Jul 15, 2026, 03_02_30 AM.png" alt="Logo Mitra" class="logo-mitra-img" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#" class="active" onclick="showPage('beranda', this)">Beranda</a></li>
+    <li><a href="#" onclick="showPage('tentang', this)">Tentang Kami</a></li>
+   <!--  <li><a href="#" onclick="showPage('kontak', this)">Kontak</a></li> -->
+  </ul>
+  <div class="nav-right">
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Search..." oninput="searchVideos(this.value)" />
+      <span onclick="searchVideos(document.getElementById('searchInput').value)" style="cursor:pointer">🔍</span>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE: BERANDA -->
+<div id="page-beranda" class="page-section">
+
+<div class="hero">
+  <h1>Interactive Video Guide Pengelolaan Perpustakaan Khusus</h1>
+  <p>Seri Panduan Digital untuk Meningkatkan Kualitas dan Inovasi <strong>Perpustakaan Khusus</strong>.</p>
+</div>
+
+<div class="container">
+  <div class="video-grid">
+
+    <!-- Card 1 — Featured -->
+    <div class="video-card featured">
+      <div class="video-thumb thumb-1">
+        <img class="thumb-img" id="thumbImg1" alt="Thumbnail Modul 1" style="display:none;">
+        <div class="thumb-people" id="thumbEmoji1">👥</div>
+        <div class="play-btn" onclick="playVideo(1)">▶</div>
+        <div class="duration-badge" id="durBadge1">04:35</div>
+        <div class="quiz-badge" onclick="openQuiz('Strategi &amp; Visi', 1)">Q Quiz</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Perpustakaan Khusus</div>
+        <div class="card-sub">Sub: Karakteristik</div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="playVideo(1)">▶ Play</button>
+          <button class="btn-quiz" onclick="openQuiz('Strategi &amp; Visi', 1)">Start Quiz</button>
+        </div>
+        <div class="quiz-progress"><div class="bar" id="prog1"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="video-card">
+      <div class="video-thumb thumb-2">
+        <img class="thumb-img" id="thumbImg2" alt="Thumbnail Modul 2" style="display:none;">
+        <div class="thumb-people" id="thumbEmoji2">📚</div>
+        <div class="play-btn" onclick="playVideo(2)">▶</div>
+        <div class="duration-badge" id="durBadge2">04:35</div>
+        <div class="quiz-badge" onclick="openQuiz('Inventarisasi &amp; Akurasi', 2)">Q Quiz</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Pengelolaan Koleksi</div>
+        <div class="card-sub">Sub: Pengembang &amp; Pengolahan</div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="playVideo(2)">▶ Play</button>
+          <button class="btn-quiz" onclick="openQuiz('Inventarisasi &amp; Akurasi', 2)">Start Quiz</button>
+        </div>
+        <div class="quiz-progress"><div class="bar" id="prog2"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="video-card">
+      <div class="video-thumb thumb-3">
+        <img class="thumb-img" id="thumbImg3" alt="Thumbnail Modul 3" style="display:none;">
+        <div class="thumb-people" id="thumbEmoji3">🖥️</div>
+        <div class="play-btn" onclick="playVideo(3)">▶</div>
+        <div class="duration-badge" id="durBadge3">04:35</div>
+        <div class="quiz-badge" onclick="openQuiz('Fasilitas &amp; Teknologi', 3)">Q Quiz</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Sarana Prasarana </div>
+        <div class="card-sub">Sub: Fasilitas &amp; Gedung</div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="playVideo(3)">▶ Play</button>
+          <button class="btn-quiz" onclick="openQuiz('Fasilitas &amp; Teknologi', 3)">Start Quiz</button>
+        </div>
+        <div class="quiz-progress"><div class="bar" id="prog3"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="video-card">
+      <div class="video-thumb thumb-4">
+        <img class="thumb-img" id="thumbImg4" alt="Thumbnail Modul 4" style="display:none;">
+        <div class="thumb-people" id="thumbEmoji4">📊</div>
+        <div class="play-btn" onclick="playVideo(4)">▶</div>
+        <div class="duration-badge" id="durBadge4">04:35</div>
+        <div class="quiz-badge" onclick="openQuiz('Automasi &amp; Sistem', 4)">Q Quiz</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Pelayanan Perpustakaan Khusus</div>
+        <div class="card-sub">Sub: Sirkulasi &amp; Promosi</div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="playVideo(4)">▶ Play</button>
+          <button class="btn-quiz" onclick="openQuiz('Automasi &amp; Sistem', 4)">Start Quiz</button>
+        </div>
+        <div class="quiz-progress"><div class="bar" id="prog4"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="video-card">
+      <div class="video-thumb thumb-5">
+        <img class="thumb-img" id="thumbImg5" alt="Thumbnail Modul 5" style="display:none;">
+        <div class="thumb-people" id="thumbEmoji5">🤝</div>
+        <div class="play-btn" onclick="playVideo(5)">▶</div>
+        <div class="duration-badge" id="durBadge5">04:35</div>
+        <div class="quiz-badge" onclick="openQuiz('Interaksi &amp; Kepuasan', 5)">Q Quiz</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Tenaga Perpustakaan Khusus</div>
+        <div class="card-sub">Sub: Kualifikasi &amp; Pelatihan</div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="playVideo(5)">▶ Play</button>
+          <button class="btn-quiz" onclick="openQuiz('Interaksi &amp; Kepuasan', 5)">Start Quiz</button>
+        </div>
+        <div class="quiz-progress"><div class="bar" id="prog5"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="video-card">
+      <div class="video-thumb thumb-6">
+        <img class="thumb-img" id="thumbImg6" alt="Thumbnail Modul 6" style="display:none;">
+        <div class="thumb-people" id="thumbEmoji6">👩‍🏫</div>
+        <div class="play-btn" onclick="playVideo(6)">▶</div>
+        <div class="duration-badge" id="durBadge6">04:35</div>
+        <div class="quiz-badge" onclick="openQuiz('Kompetensi &amp; Sertifikasi', 6)">Q Quiz</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Penyelenggaraan Perpustakaan Khusus</div>
+        <div class="card-sub">Sub: Kebijakan &amp; Prosedur</div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="playVideo(6)">▶ Play</button>
+          <button class="btn-quiz" onclick="openQuiz('Kompetensi &amp; Sertifikasi', 6)">Start Quiz</button>
+        </div>
+        <div class="quiz-progress"><div class="bar" id="prog6"></div></div>
+      </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="video-card">
+      <div class="video-thumb thumb-7">
+        <img class="thumb-img" id="thumbImg7" alt="Thumbnail Modul 7" style="display:none;">
+        <div class="thumb-people" id="thumbEmoji7">📋</div>
+        <div class="play-btn" onclick="playVideo(7)">▶</div>
+        <div class="duration-badge" id="durBadge7">04:35</div>
+        <div class="quiz-badge" onclick="openQuiz('Struktur Organisasi &amp; Kebijakan', 7)">Q Quiz</div>
+      </div>
+      <div class="card-body">
+        <div class="card-title">Pengelolaan</div>
+        <div class="card-sub">Sub: perencanaan &amp; Pengawasan</div>
+        <div class="card-actions">
+          <button class="btn-play" onclick="playVideo(7)">▶ Play</button>
+          <button class="btn-quiz" onclick="openQuiz('Struktur Organisasi &amp; Kebijakan', 7)">Start Quiz</button>
+        </div>
+        <div class="quiz-progress"><div class="bar" id="prog7"></div></div>
+      </div>
+    </div>
+
+  </div><!-- /video-grid -->
+</div><!-- /container -->
+</div><!-- /page-beranda -->
+
+<!-- PAGE: TENTANG KAMI -->
+<div id="page-tentang" class="page-section" style="display:none">
+  <div class="hero hero-tentang">
+    <img class="hero-logo hero-logo-left" src="logo-um-seal.png" alt="Logo Universitas Negeri Malang">
+    <h1>Tentang 'LIBORA'</h1>
+    <p>Platform panduan digital untuk pengelolaan perpustakaan khusus Indonesia.</p>
+    <img class="hero-logo hero-logo-right" src="logo-mitra.png" alt="Logo Mitra">
+  </div>
+  <div class="container">
+    <div class="about-section">
+      <div class="about-card">
+        <div class="about-icon"><img src="Inawati__S.I.P.__M.M._Ketua_Program_Studi_D4_Perpustakaan_Digital_FV.jpg" alt="Visi"></div>
+        <h3>Inawati, S.I.P,. M.M.</h3>
+        <p>NIP: 199006192018032001.</p>
+        <p>Tim Pengembang </p>
+      </div>
+      <div class="about-card">
+        <div class="about-icon"><img src="IMG_0476.PNG" alt="Misi"></div>
+        <h3>Utari Inayatu Zahrah</h3>
+        <p>NIM: 210213503609 </p>
+        <p>Tim Pengembang </p>
+      </div>
+    </div>
+    <div class="about-product">
+      <p>LIBORA adalah platform pembelajaran video interaktif yang dirancang khusus untuk membantu pustakawan dan pengelola perpustakaan khusus meningkatkan kompetensi mereka secara mandiri dan fleksibel.</p>
+      <div class="product-features">
+        <div class="product-feature">
+          <div class="feature-icon">🎬</div>
+          <div class="feature-text">
+            <strong>7 Modul Video</strong>
+            <span>Materi lengkap seputar pengelolaan perpustakaan khusus, dari strategi hingga pelayanan.</span>
+          </div>
+        </div>
+        <div class="product-feature">
+          <div class="feature-icon">📝</div>
+          <div class="feature-text">
+            <strong>Kuis Interaktif</strong>
+            <span>Setiap modul dilengkapi kuis untuk menguji pemahaman setelah menonton video.</span>
+          </div>
+        </div>
+        <div class="product-feature">
+          <div class="feature-icon">🔊</div>
+          <div class="feature-text">
+            <strong>Fitur Narasi</strong>
+            <span>Dukungan pembacaan teks otomatis agar konten lebih mudah diakses.</span>
+          </div>
+        </div>
+        <div class="product-feature">
+          <div class="feature-icon">📱</div>
+          <div class="feature-text">
+            <strong>Akses Fleksibel</strong>
+            <span>Belajar kapan saja dan di mana saja melalui perangkat apa pun.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: KONTAK -->
+<!-- <div id="page-kontak" class="page-section" style="display:none">
+  <div class="hero">
+    <h1>Hubungi Kami</h1>
+    <p>Ada pertanyaan atau masukan? Kami siap membantu Anda.</p>
+  </div>
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div><strong>Alamat</strong><p>Jl. Perpustakaan No. 1, Jakarta Pusat, DKI Jakarta 10110</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📞</div>
+          <div><strong>Telepon</strong><p>(021) 1234-5678</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">✉️</div>
+          <div><strong>Email</strong><p>info@digi-pustaka.id</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div><strong>Jam Operasional</strong><p>Senin – Jumat: 08.00 – 16.00 WIB</p></div>
+        </div>
+      </div>
+      <div class="contact-form">
+        <div class="form-group"><label>Nama Lengkap</label><input type="text" placeholder="Masukkan nama Anda..." class="form-input" /></div>
+        <div class="form-group"><label>Email</label><input type="email" placeholder="Masukkan email Anda..." class="form-input" /></div>
+        <div class="form-group"><label>Subjek</label><input type="text" placeholder="Subjek pesan..." class="form-input" /></div>
+        <div class="form-group"><label>Pesan</label><textarea placeholder="Tulis pesan Anda di sini..." class="form-input form-textarea"></textarea></div>
+        <button class="btn-send" onclick="sendMessage()">📨 Kirim Pesan</button>
+      </div>
+    </div>
+  </div>
+</div> --->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-social">
+  <div>Hak Cipta &copy; .</div>
+</footer>
+
+<!-- =============================================
+     VIDEO MODAL (YouTube IFrame API)
+     ============================================= -->
+<div class="video-modal-overlay" id="videoOverlay" onclick="handleVideoOverlayClick(event)">
+  <div class="video-modal">
+
+    <div class="video-modal-header">
+      <span id="videoTitle">Modul 1</span>
+      <button onclick="closeVideoModal()" title="Tutup">&#x2715;</button>
+    </div>
+
+    <!-- YouTube IFrame API player -->
+    <div class="video-player-area" id="videoPlayerArea">
+
+      <!-- Placeholder: input link/ID YouTube -->
+      <div id="videoPlaceholder" style="width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px;background:#111;">
+        <div style="font-size:2.8rem;">🎬</div>
+        <div style="font-size:0.92rem;color:#ccc;text-align:center;" id="videoPlaceholderLabel">
+          Masukkan link/ID YouTube untuk Modul ini
+        </div>
+        <div style="display:flex;gap:8px;width:100%;max-width:400px;">
+          <input
+            type="text"
+            id="youtubeIdInput"
+            placeholder="Contoh: https://youtu.be/dQw4w9WgXcQ"
+            style="flex:1;padding:10px 14px;border-radius:8px;border:none;font-size:0.88rem;outline:none;"
+          />
+          <button onclick="loadYoutubeVideo()" class="btn-pick-video" style="white-space:nowrap;">▶ Muat</button>
+        </div>
+        <div style="font-size:0.78rem;color:#888;text-align:center;line-height:1.7;">
+          <b style="color:#90CAF9;">⚠️ Penting:</b> Pastikan video YouTube sudah diatur ke<br>
+          <b style="color:#aaffaa;">Publik</b> atau <b style="color:#aaffaa;">Tidak Publik (Unlisted)</b> — bukan Privat<br><br>
+          Bisa isi link penuh (youtube.com/watch?v=..., youtu.be/...)<br>atau langsung ID videonya saja (11 karakter).
+        </div>
+      </div>
+
+      <!-- YouTube player akan menggantikan div ini via IFrame API -->
+      <div id="ytPlayerContainer" style="display:none;width:100%;aspect-ratio:16/9;"></div>
+
+    </div>
+
+    <!-- Progress bar simulasi -->
+    <div class="video-progress-wrap" id="videoProgressWrap" style="display:none;">
+      <div class="video-progress-track">
+        <div id="videoProgressBar"></div>
+      </div>
+    </div>
+
+    <!-- Status -->
+    <div class="video-status-text" id="videoStatus">
+      📂 Masukkan link/ID YouTube untuk memulai video.
+    </div>
+
+    <!-- Tombol selesai -->
+    <div class="video-modal-footer">
+      <button class="btn-video-done" id="videoDoneBtn" onclick="videoDone()" disabled>
+        ⏳ Menonton...
+      </button>
+    </div>
+
+    <!-- Tombol "Sudah Selesai Nonton" manual (backup jika iframe tidak bisa dideteksi) -->
+    <div style="padding:0 18px 14px;text-align:center;" id="manualDoneWrap" style="display:none;">
+      <button class="btn-manual-done" id="btnManualDone" onclick="markVideoWatched()" style="display:none;">
+        ✅ Saya Sudah Selesai Menonton — Buka Kuis
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- =============================================
+     QUIZ MODAL
+     ============================================= -->
+<div class="quiz-modal-overlay" id="quizOverlay" onclick="handleOverlayClick(event)">
+  <div class="quiz-modal" id="quizModal">
+
+    <div class="quiz-modal-header">
+      <span id="quizTitle">Kuis Modul 1: Strategi &amp; Visi</span>
+      <button class="quiz-close" onclick="closeQuiz()">&#x2715;</button>
+    </div>
+
+    <div class="quiz-question-text" id="quizQuestion">
+      Manakah yang merupakan elemen kunci dalam strategi perpustakaan khusus?
+    </div>
+
+    <div class="quiz-options" id="quizOptions"></div>
+
+    <div class="quiz-progress-bar">
+      <div class="bar" id="quizProgressBar" style="width: 20%"></div>
+    </div>
+
+    <div class="quiz-btn-row">
+      <button class="btn-next" id="btnNext" onclick="nextQuestion()" disabled>Next</button>
+      <button class="btn-submit" onclick="submitAnswer()">Submit</button>
+    </div>
+
+    <div class="quiz-footer">
+      <span id="quizCounter">Question 1 of 5</span>
+      <span id="quizScore">Score: 0/50</span>
+    </div>
+
+  </div>
+</div>
+
+<!-- =============================================
+     QUIZ RESULT MODAL
+     ============================================= -->
+<div class="result-modal-overlay" id="resultOverlay" onclick="handleResultOverlayClick(event)">
+  <div class="result-modal">
+    <div class="result-icon" id="resultIcon">🎉</div>
+    <div class="result-title" id="resultTitle">Kuis Selesai!</div>
+    <div class="result-score" id="resultScoreText">50 / 50</div>
+    <div class="result-bar-track"><div class="result-bar-fill" id="resultBarFill"></div></div>
+    <div class="result-message" id="resultMessage">Sempurna! Luar biasa!</div>
+    <button class="btn-result-close" onclick="closeResultModal()">Tutup</button>
+  </div>
+</div>
+
+<!-- Player tersembunyi khusus untuk membaca durasi asli video YouTube -->
+<div id="durationProbePlayer" style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none;overflow:hidden;left:-9999px;"></div>
+
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="script.js"></script>
+</body>
+</html>
