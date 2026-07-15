@@ -7,7 +7,7 @@
    @font-face 
   {
     font-family: 'Ravoni'; /*memberikan nama bebas untuk font*/
-    src: url('RAVONI/Ravoni.otf');/*memanggil file font eksternalnya di folder nexa*/
+    src: url('Ravoni.otf');/*memanggil file font eksternalnya di folder nexa*/
   }
 
    /* === RESET & ROOT VARIABLES === */
