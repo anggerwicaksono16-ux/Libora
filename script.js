@@ -17,7 +17,7 @@
       { q: "Komponen yang mengatur tentang perencanaan strategis, anggaran tahunan, dan evaluasi kinerja berkala disebut dengan komponen..?", opts: ["Koleksi", "Pengelolaan", "Penyelenggaraan", "Sarana dan Prasarana"], correct: 1 }
     ],
     2: [
-      { q: "Apa langkah pertama dalam pengelolaan koleksi perpustakaan khusus?", opts: ["Pelestarian koleksi", "Katalogisasi", "Pengembanan koleksi", "Penyiangan"], correct: 2 },
+      { q: "Apa langkah pertama dalam pengelolaan koleksi perpustakaan khusus?", opts: ["Pelestarian koleksi", "Katalogisasi", "Pengembangan koleksi", "Penyiangan"], correct: 2 },
       { q: "Apa tujuan klasifikasi menggunakan DDC?", opts: ["Mengelompokkan buku berdasarkan subjek", "Memberi nomor infentaris", "Membersihkan koleksi dari debu", "Mencatat peminjaman buku"], correct: 0 },
       { q: "Saat cacah ulang ditemukan dua buku tidak ada di rak tindakan pertama yang tepat adalah?", opts: ["Mengganti dengan buku baru", "Mencocokkan kembali dengan data peminjaman dan lokasi penyimpanan", "Melakukan penyiangan", "Langsun menghapus dari inventaris"], correct: 1 },
       { q: "Koleksi digital perpustakaan sebaiknya dikelola menggunakan?", opts: ["Buku catatan manual", "Sistem katalog online", "Lembar spreadsheet tanpa backup", "Flashdisk pribadi pustakawan"], correct: 1 },
