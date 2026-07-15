@@ -11,8 +11,8 @@
 
 <!-- NAVBAR -->
 <nav>
-  <a class="logo" href="#">
-    <div class="logo-icon">📚</div>
+  <a class="logo" onclick="showPage('beranda', this)" href="#">
+    <div class="logo-icon" >📚</div>
     Libora
     <img src="ChatGPT Image Jul 15, 2026, 03_02_30 AM.png" alt="Logo Mitra" class="logo-mitra-img" />
   </a>
@@ -22,7 +22,7 @@
    <!--  <li><a href="#" onclick="showPage('kontak', this)">Kontak</a></li> -->
   </ul>
   <div class="nav-right">
-    <div class="search-box">
+    <div class="search-box"> 
       <input type="text" id="searchInput" placeholder="Search..." oninput="searchVideos(this.value)" />
       <span onclick="searchVideos(document.getElementById('searchInput').value)" style="cursor:pointer">🔍</span>
     </div>
@@ -110,7 +110,7 @@
         <div class="quiz-badge" onclick="openQuiz('Automasi &amp; Sistem', 4)">Q Quiz</div>
       </div>
       <div class="card-body">
-        <div class="card-title">Pelayanan Perpustakaan Khusus</div>
+        <div class="card-title">Pelayanan Perpustakaan </div>
         <div class="card-sub">Sub: Sirkulasi &amp; Promosi</div>
         <div class="card-actions">
           <button class="btn-play" onclick="playVideo(4)">▶ Play</button>
@@ -130,7 +130,7 @@
         <div class="quiz-badge" onclick="openQuiz('Interaksi &amp; Kepuasan', 5)">Q Quiz</div>
       </div>
       <div class="card-body">
-        <div class="card-title">Tenaga Perpustakaan Khusus</div>
+        <div class="card-title">Tenaga Perpustakaan </div>
         <div class="card-sub">Sub: Kualifikasi &amp; Pelatihan</div>
         <div class="card-actions">
           <button class="btn-play" onclick="playVideo(5)">▶ Play</button>
@@ -150,7 +150,7 @@
         <div class="quiz-badge" onclick="openQuiz('Kompetensi &amp; Sertifikasi', 6)">Q Quiz</div>
       </div>
       <div class="card-body">
-        <div class="card-title">Penyelenggaraan Perpustakaan Khusus</div>
+        <div class="card-title">Penyelenggaraan Perpustakaan </div>
         <div class="card-sub">Sub: Kebijakan &amp; Prosedur</div>
         <div class="card-actions">
           <button class="btn-play" onclick="playVideo(6)">▶ Play</button>
@@ -188,8 +188,7 @@
 <div id="page-tentang" class="page-section" style="display:none">
   <div class="hero hero-tentang">
     <img class="hero-logo hero-logo-left" src="logo-um-seal.png" alt="Logo Universitas Negeri Malang">
-    <h1>Tentang 'LIBORA'</h1>
-    <p>Platform panduan digital untuk pengelolaan perpustakaan khusus Indonesia.</p>
+    <h1>Tim Pengembang</h1>
     <img class="hero-logo hero-logo-right" src="logo-mitra.png" alt="Logo Mitra">
   </div>
   <div class="container">
@@ -197,17 +196,20 @@
       <div class="about-card">
         <div class="about-icon"><img src="Inawati__S.I.P.__M.M._Ketua_Program_Studi_D4_Perpustakaan_Digital_FV.jpg" alt="Visi"></div>
         <h3>Inawati, S.I.P,. M.M.</h3>
-        <p>NIP: 199006192018032001.</p>
-        <p>Tim Pengembang </p>
+        <p>Dosen Pembimbing, Fakultas Vokasi</p>
+        <p>Prodi D4 Perpustakaan Digital </p> 
+        <p>Universita Negeri Malang</p> 
       </div>
       <div class="about-card">
         <div class="about-icon"><img src="IMG_0476.PNG" alt="Misi"></div>
         <h3>Utari Inayatu Zahrah</h3>
-        <p>NIM: 210213503609 </p>
-        <p>Tim Pengembang </p>
+        <p>Mahasiswi D4 Perpustakaan  Digital</p>
+        <p>Angkatan 2021, Fakultas Vokasi </p>
+        <p>Universita Negeri Malang </p>
       </div>
     </div>
     <div class="about-product">
+      <h1>Tentang 'LIBORA'</h1>
       <p>LIBORA adalah platform pembelajaran video interaktif yang dirancang khusus untuk membantu pustakawan dan pengelola perpustakaan khusus meningkatkan kompetensi mereka secara mandiri dan fleksibel.</p>
       <div class="product-features">
         <div class="product-feature">
