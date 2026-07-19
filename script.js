@@ -575,8 +575,11 @@
       div.className = 'quiz-option';
   
       if (answered[currentQuestion] !== undefined) {
-        if (i === q.correct)                                          div.classList.add('correct');
-        else if (i === answered[currentQuestion] && i !== q.correct) div.classList.add('wrong');
+        // Hanya menandai opsi yang dipilih user (benar/salah),
+        // opsi lain (termasuk jawaban benar) tidak ditandai.
+        if (i === answered[currentQuestion]) {
+          div.classList.add(i === q.correct ? 'correct' : 'wrong');
+        }
       }
   
       div.innerHTML = '<span><span class="opt-label">' + labels[i] + '</span>' + opt + '</span><span class="opt-circle"></span>';
@@ -610,6 +613,9 @@
   
     renderQuestion();
     document.getElementById('quizScore').textContent = 'Skor: ' + score + '/' + (quizData[currentModule].length * 10);
+
+    // Otomatis lanjut ke soal berikutnya setelah submit
+    setTimeout(function () { nextQuestion(); }, 500);
   }
   
   function nextQuestion() {
