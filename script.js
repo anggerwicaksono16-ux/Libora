@@ -212,13 +212,13 @@
      https://www.youtube.com/watch?v=VIDEO_ID  atau  https://youtu.be/VIDEO_ID
      ================================================ */
   const youtubeVideoIds = {
-    1: 'jiRVIfQmz0Q',
-    2: '2pxe5Xo8GRc',
+    1: 'M0XRQTSi5dU',
+    2: 'Z-pGSLGJZHU',
     3: 'z6_fZRJQzSw',
     4: 'A806lF7rnhE',
     5: 'i2_pQ_qJUcM',
     6: '9Lr6riIr9WQ',
-    7: 'zx4Zno5MnBc',
+    7: '--YroytYXJA',
   };
 
   /* ================================================
@@ -265,7 +265,7 @@
     overlay.dataset.cardId = id;
     titleEl.textContent    = 'Modul ' + id + ': ' + (moduleNames[id] || '');
     bar.style.width        = '0%';
-  
+
     clearTimer();
   
     // Cek jika sudah ditonton sebelumnya
