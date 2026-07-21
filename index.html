@@ -18,6 +18,7 @@
   </a>
   <ul class="nav-links">
     <li><a href="#" class="active" onclick="showPage('beranda', this)">Beranda</a></li>
+    <li><a href="#" onclick="showPage('direktori', this)">Direktori Perpustakaan Khusus</a></li>
     <li><a href="#" onclick="showPage('tentang', this)">Tentang Kami</a></li>
    <!--  <li><a href="#" onclick="showPage('kontak', this)">Kontak</a></li> -->
   </ul>
@@ -90,7 +91,7 @@
         <div class="quiz-badge" onclick="openQuiz('Fasilitas &amp; Teknologi', 3)">Q Quiz</div>
       </div>
       <div class="card-body">
-        <div class="card-title">Sarana Prasarana </div>
+        <div class="card-title">Sarana Prasarana</div>
         <div class="card-sub">Sub: Fasilitas &amp; Gedung</div>
         <div class="card-actions">
           <button class="btn-play" onclick="playVideo(3)">▶ Play</button>
@@ -110,7 +111,7 @@
         <div class="quiz-badge" onclick="openQuiz('Automasi &amp; Sistem', 4)">Q Quiz</div>
       </div>
       <div class="card-body">
-        <div class="card-title">Pelayanan Perpustakaan </div>
+        <div class="card-title">Pelayanan Perpustakaan</div>
         <div class="card-sub">Sub: Sirkulasi &amp; Promosi</div>
         <div class="card-actions">
           <button class="btn-play" onclick="playVideo(4)">▶ Play</button>
@@ -130,7 +131,7 @@
         <div class="quiz-badge" onclick="openQuiz('Interaksi &amp; Kepuasan', 5)">Q Quiz</div>
       </div>
       <div class="card-body">
-        <div class="card-title">Tenaga Perpustakaan </div>
+        <div class="card-title">Tenaga Perpustakaan</div>
         <div class="card-sub">Sub: Kualifikasi &amp; Pelatihan</div>
         <div class="card-actions">
           <button class="btn-play" onclick="playVideo(5)">▶ Play</button>
@@ -150,7 +151,7 @@
         <div class="quiz-badge" onclick="openQuiz('Kompetensi &amp; Sertifikasi', 6)">Q Quiz</div>
       </div>
       <div class="card-body">
-        <div class="card-title">Penyelenggaraan Perpustakaan </div>
+        <div class="card-title">Penyelenggaraan Perpustakaan</div>
         <div class="card-sub">Sub: Kebijakan &amp; Prosedur</div>
         <div class="card-actions">
           <button class="btn-play" onclick="playVideo(6)">▶ Play</button>
@@ -183,6 +184,133 @@
   </div><!-- /video-grid -->
 </div><!-- /container -->
 </div><!-- /page-beranda -->
+
+<!-- PAGE: DIREKTORI PERPUSTAKAAN KHUSUS -->
+<div id="page-direktori" class="page-section" style="display:none">
+
+  <div class="hero">
+    <h1>Direktori Data Perpustakaan Khusus</h1>
+    <p>Data terhimpun dari <strong>Perpustakaan Nasional RI (Perpusnas)</strong> untuk kategori Perpustakaan Khusus.</p>
+  </div>
+
+  <div class="container">
+
+    <div class="direktori-toolbar">
+      <div class="search-box direktori-search">
+        <input type="text" id="direktoriSearchInput" placeholder="Cari nama perpustakaan, kota, atau alamat..." oninput="searchDirektori(this.value)" />
+        <span onclick="searchDirektori(document.getElementById('direktoriSearchInput').value)" style="cursor:pointer">🔍</span>
+      </div>
+      <a class="direktori-source-link" href="https://data.perpusnas.go.id/public/direktori/perpustakaan-khusus" target="_blank" rel="noopener">
+        🔗 Lihat data lengkap &amp; terkini di Perpusnas
+      </a>
+    </div>
+
+    <div class="direktori-table-wrap">
+      <table class="direktori-table" id="direktoriTable">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>NPP</th>
+            <th>Nama Perpustakaan</th>
+            <th>Provinsi</th>
+            <th>Kota / Kabupaten</th>
+            <th>Alamat</th>
+            <th>Telepon</th>
+          </tr>
+        </thead>
+        <tbody id="direktoriTableBody">
+          <tr>
+            <td>1</td>
+            <td>—</td>
+            <td>Perpustakaan Bank Indonesia Malang</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>Jalan Kawi Nomor 17</td>
+            <td>0341-366054</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>3573014G0000001</td>
+            <td>Perpustakaan LSima</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>Jalan Asahan</td>
+            <td>08125295773</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>3573044G0000001</td>
+            <td>Perpustakaan Pengayoman</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>Jalan Raya Kebonsari Malang</td>
+            <td>085784242914</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>3573014D0000024</td>
+            <td>Gebyar Semangat</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>R Panji Suroso 02</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>3573024D0000018</td>
+            <td>Gebyar Ilmu</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>Jl. Merdeka 01 Kota Malang</td>
+            <td>87854513150</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>3573024D0000001</td>
+            <td>Perpustakaan Kendedes Dharma Wanita Persatuan Cabang Dinas Pendidikan Wilayah Kabupaten Malang</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>Jalan Simpang Ijen Nomor 2</td>
+            <td>081259122596</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>—</td>
+            <td>Perpustakaan Ponpes Tarbiyatul Iman</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>Perumahan Srigading Dalam Kavling 9-12</td>
+            <td>082132314565</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>3573024J0000001</td>
+            <td>Perpustakaan Kodam V/Brawijaya</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>Jalan Ijen Nomor 25 A Kota Malang</td>
+            <td>0341362150</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>3573034D0000001</td>
+            <td>Perpustakaan UPTP KUKM Jatim</td>
+            <td>Jawa Timur</td>
+            <td>Kota Malang</td>
+            <td>Jalan Raya Ki Ageng Gribig, Madyopuro, Kecamatan Kedungkandang</td>
+            <td>081331220006</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="direktoriEmptyMsg" style="display:none;text-align:center;padding:40px;color:#888;font-size:1rem;">Tidak ada data yang cocok dengan pencarian Anda.</div>
+    </div>
+
+    <p class="direktori-note">
+      📌 Data di atas merupakan contoh sebagian data Perpustakaan Khusus wilayah Kota Malang, Jawa Timur, yang diambil dari portal resmi Perpusnas. Untuk data seluruh Indonesia dan pembaruan terkini, kunjungi tautan sumber data di atas.
+    </p>
+
+  </div>
+</div><!-- /page-direktori -->
 
 <!-- PAGE: TENTANG KAMI -->
 <div id="page-tentang" class="page-section" style="display:none">
@@ -242,6 +370,22 @@
         </div>
       </div>
     </div>
+
+    <div class="regulasi-section">
+      <h1>Dasar Hukum</h1>
+      <p>Seluruh materi pada Interactive Video Guide mengacu pada regulasi resmi berikut ini.</p>
+      <div class="regulasi-card">
+        <div class="regulasi-icon">📄</div>
+        <div class="regulasi-info">
+          <h3>Peraturan Perpustakaan Nasional RI Nomor 7 Tahun 2022</h3>
+          <p>Tentang Standar Nasional Perpustakaan Khusus</p>
+        </div>
+        <div class="regulasi-actions">
+          <a class="btn-regulasi" href="Peraturan Perpusnas Nomor 7 Tahun 2022.pdf" target="_blank" rel="noopener">👁️ Buka PDF</a>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -327,6 +471,16 @@
       <!-- YouTube player akan menggantikan div ini via IFrame API -->
       <div id="ytPlayerContainer" style="display:none;width:100%;aspect-ratio:16/9;"></div>
 
+    </div>
+
+    <!-- ============================================
+         CONTAINER KUSTOM DI BAWAH VIDEO
+         Isi bagian ini sendiri di VS Code (teks, tombol,
+         gambar, link, dll). Kosong secara default.
+         ============================================ -->
+    <div class="video-custom-container" id="videoCustomContainer">
+      <div class="vcc-title">📌 Modul</div>
+      <div class="vcc-desc">Deskripsi modul akan tampil otomatis di sini.</div>
     </div>
 
     <!-- Progress bar simulasi -->
