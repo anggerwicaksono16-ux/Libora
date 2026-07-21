@@ -70,6 +70,54 @@
   ];
 
   /* ================================================
+     JUDUL & DESKRIPSI OTOMATIS UNTUK CONTAINER
+     DI BAWAH VIDEO — diisi otomatis sesuai modul yang
+     sedang diputar. Ubah teksnya di sini jika perlu.
+     ================================================ */
+  const moduleInfo = {
+    1: {
+      title: 'Perpustakaan Khusus',
+      desc: 'Modul ini membahas karakteristik utama yang membedakan perpustakaan khusus dari jenis perpustakaan lainnya. Koleksinya dirancang khusus untuk mendukung tugas dan fungsi instansi induk. Anda akan mempelajari acuan Standar Nasional Perpustakaan Khusus (SNPK), jenis-jenis lembaga yang dapat menaungi perpustakaan khusus (pemerintah, non-pemerintah, hingga rumah ibadah), serta komponen utama yang wajib dipenuhi, termasuk perencanaan strategis, anggaran tahunan, dan evaluasi kinerja berkala.'
+    },
+    2: {
+      title: 'Pengelolaan Koleksi',
+      desc: 'Modul ini mengupas tahapan pengelolaan koleksi perpustakaan khusus, mulai dari pengembangan koleksi, klasifikasi menggunakan sistem DDC, hingga katalogisasi. Dibahas pula proses cacah ulang (stock opname) dan penanganan koleksi yang hilang. Modul ini juga membahas pengelolaan koleksi digital melalui sistem katalog online, serta pentingnya pelestarian koleksi secara berkala agar bahan pustaka tetap awet dan dapat dimanfaatkan dalam jangka panjang.'
+    },
+    3: {
+      title: 'Sarana Prasarana',
+      desc: 'Modul ini membahas fasilitas dan infrastruktur yang wajib dimiliki perpustakaan khusus modern, seperti ruang baca yang nyaman, akses internet, dan sistem katalog digital. Dibahas pula penerapan teknologi RFID untuk otomasi peminjaman, pengembalian, dan keamanan koleksi, penggunaan self-service kiosk, serta standar pencahayaan ruang baca (300–500 lux). Modul ini juga mencakup infrastruktur jaringan seperti koneksi internet cepat, Wi-Fi, dan server lokal yang mendukung layanan digital.'
+    },
+    4: {
+      title: 'Pelayanan Perpustakaan',
+      desc: 'Modul ini menjelaskan sistem otomasi perpustakaan yang umum digunakan di Indonesia, seperti SLiMS (Senayan Library Management System), serta konsep OPAC (Online Public Access Catalog) sebagai sarana pencarian koleksi bagi pengguna. Dibahas pula pentingnya integrasi sistem perpustakaan dengan sistem informasi organisasi, dan prosedur backup data secara berkala di lokasi berbeda. Modul ini juga menjelaskan manfaat automasi sirkulasi dalam mempercepat transaksi dan menghasilkan laporan otomatis.'
+    },
+    5: {
+      title: 'Tenaga Perpustakaan',
+      desc: 'Modul ini membahas layanan referensi sebagai sarana membantu pengguna menemukan informasi yang tepat dan relevan. Dibahas pula cara mengukur kepuasan pengguna melalui survei, wawancara, dan analisis statistik penggunaan layanan. Modul ini juga mencakup literasi informasi yang perlu diajarkan pustakawan kepada pengguna, prinsip layanan berbasis kebutuhan pengguna (user-centered service), serta pentingnya komunikasi efektif dan empati dalam interaksi antara pustakawan dan pengguna.'
+    },
+    6: {
+      title: 'Penyelenggaraan Perpustakaan',
+      desc: 'Modul ini menjelaskan kompetensi utama yang harus dimiliki pustakawan khusus, mencakup ilmu perpustakaan, teknologi informasi, dan komunikasi. Dibahas pula proses sertifikasi pustakawan yang dikeluarkan oleh Perpustakaan Nasional RI melalui uji kompetensi resmi, serta pentingnya pengembangan profesional berkelanjutan (CPD) untuk memperbarui pengetahuan sesuai perkembangan zaman. Modul ini juga membahas pelatihan relevan seperti literasi digital, pengelolaan metadata, dan repositori institusi.'
+    },
+    7: {
+      title: 'Pengelolaan',
+      desc: 'Modul ini membahas struktur organisasi ideal perpustakaan khusus yang mencerminkan fungsi layanan, pengelolaan koleksi, dan pengembangan sumber daya. Dibahas pula kebijakan pengembangan koleksi yang mencakup kriteria seleksi dan anggaran, serta dasar hukum penyelenggaraan perpustakaan (UU No. 43 Tahun 2007). Modul ini juga menjelaskan fungsi laporan tahunan sebagai bahan evaluasi kinerja dan perencanaan, serta prinsip tata kelola perpustakaan yang baik (good library governance) yang meliputi transparansi, akuntabilitas, efisiensi, dan partisipasi pemangku kepentingan.'
+    }
+  };
+
+  /* ================================================
+     ISI CONTAINER DI BAWAH VIDEO SECARA OTOMATIS
+     ================================================ */
+  function fillVideoCustomContainer(id) {
+    const box  = document.getElementById('videoCustomContainer');
+    if (!box) return;
+    const info = moduleInfo[id] || { title: 'Modul ' + id, desc: '' };
+    box.innerHTML =
+      '<div class="vcc-title">📌 ' + info.title + '</div>' +
+      '<div class="vcc-desc">' + info.desc + '</div>';
+  }
+
+  /* ================================================
      PETA GAMBAR THUMBNAIL PER MODUL
      Isi dengan path/URL gambar thumbnail Anda, contoh:
      1: 'images/modul1.jpg'  atau  1: 'https://contoh.com/gambar.jpg'
@@ -265,6 +313,7 @@
     overlay.dataset.cardId = id;
     titleEl.textContent    = 'Modul ' + id + ': ' + (moduleNames[id] || '');
     bar.style.width        = '0%';
+    fillVideoCustomContainer(id);
 
     clearTimer();
   
@@ -706,6 +755,25 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
   
+  /* ================================================
+     DIREKTORI PERPUSTAKAAN KHUSUS
+     ================================================ */
+  function searchDirektori(keyword) {
+    const q      = keyword.trim().toLowerCase();
+    const rows   = document.querySelectorAll('#direktoriTableBody tr');
+    let   found  = 0;
+
+    rows.forEach(function (row) {
+      const text  = row.textContent.toLowerCase();
+      const match = !q || text.includes(q);
+      row.style.display = match ? '' : 'none';
+      if (match) found++;
+    });
+
+    const emptyMsg = document.getElementById('direktoriEmptyMsg');
+    if (emptyMsg) emptyMsg.style.display = found === 0 ? 'block' : 'none';
+  }
+
   /* ================================================
      KONTAK
      ================================================ */
