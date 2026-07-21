@@ -7,7 +7,7 @@
    @font-face 
   {
     font-family: 'Ravoni'; /*memberikan nama bebas untuk font*/
-    src: url('Ravoni.otf');/*memanggil file font eksternalnya di folder nexa*/
+    src: url('RAVONI/Ravoni.otf');/*memanggil file font eksternalnya di folder nexa*/
   }
 
    /* === RESET & ROOT VARIABLES === */
@@ -650,7 +650,9 @@
      box-shadow: 0 16px 60px rgba(0, 0, 0, 0.35);
      width: 560px;
      max-width: 95vw;
-     overflow: hidden;
+     max-height: 90vh;
+     overflow-y: auto;
+     overflow-x: hidden;
      animation: slideIn 0.25s ease;
    }
    
@@ -663,6 +665,9 @@
      justify-content: space-between;
      font-weight: 700;
      font-size: 0.97rem;
+     position: sticky;
+     top: 0;
+     z-index: 2;
    }
    
    .video-modal-header button {
@@ -703,6 +708,25 @@
      color: #aaa;
    }
    
+   /* Container kustom di bawah video — terisi otomatis lewat script.js */
+   .video-custom-container {
+     padding: 14px 18px;
+     border-top: 1px solid #eee;
+     background: #f7f9fc;
+   }
+   .vcc-title {
+     font-weight: 700;
+     font-size: 0.92rem;
+     color: #0D1B3E;
+     margin-bottom: 4px;
+   }
+   .vcc-desc {
+     font-size: 0.85rem;
+     color: #555;
+     line-height: 1.5;
+     text-align: justify;
+   }
+
    /* Video progress bar */
    .video-progress-wrap {
      padding: 14px 18px 6px;
@@ -973,6 +997,82 @@
      margin-bottom: 40px;
    }
    
+   /* =============================================
+      DIREKTORI PERPUSTAKAAN KHUSUS
+      ============================================= */
+   .direktori-toolbar {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     flex-wrap: wrap;
+     gap: 14px;
+     margin-bottom: 22px;
+   }
+
+   .direktori-search {
+     min-width: 280px;
+     flex: 1;
+     max-width: 420px;
+   }
+
+   .direktori-search input { width: 100%; }
+
+   .direktori-source-link {
+     color: var(--green-primary);
+     font-size: 0.9rem;
+     font-weight: 600;
+     text-decoration: none;
+     white-space: nowrap;
+   }
+   .direktori-source-link:hover { text-decoration: underline; }
+
+   .direktori-table-wrap {
+     background: var(--white);
+     border-radius: var(--radius);
+     box-shadow: var(--shadow);
+     overflow-x: auto;
+   }
+
+   .direktori-table {
+     width: 100%;
+     border-collapse: collapse;
+     font-size: 0.9rem;
+     min-width: 760px;
+   }
+
+   .direktori-table thead th {
+     background: var(--navy);
+     color: var(--white);
+     text-align: left;
+     padding: 14px 16px;
+     font-weight: 700;
+     white-space: nowrap;
+   }
+
+   .direktori-table tbody td {
+     padding: 13px 16px;
+     border-bottom: 1px solid var(--gray-light);
+     color: #333;
+     vertical-align: top;
+   }
+
+   .direktori-table tbody tr:last-child td { border-bottom: none; }
+   .direktori-table tbody tr:hover { background: var(--green-bg); }
+   .direktori-table tbody td:first-child { color: var(--green-primary); font-weight: 700; }
+
+   .direktori-note {
+     margin-top: 18px;
+     color: var(--gray-text);
+     font-size: 0.85rem;
+     line-height: 1.6;
+     text-align: center;
+   }
+
+   @media (max-width: 700px) {
+     .direktori-toolbar { flex-direction: column; align-items: stretch; }
+     .direktori-search { max-width: none; }
+   }
+
    .about-card {
      background: white;
      border-radius: var(--radius);
@@ -980,6 +1080,89 @@
      padding: 28px 24px;
      text-align: center;
      transition: transform 0.2s;
+   }
+
+   /* =============================================
+      REGULASI / DASAR HUKUM (PDF)
+      ============================================= */
+   .regulasi-section {
+     margin-top: 40px;
+     text-align: center;
+   }
+
+   .regulasi-section h1 {
+     font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+     font-size: 1.6rem;
+     font-weight: 800;
+     color: var(--navy);
+     margin-bottom: 8px;
+   }
+
+   .regulasi-section > p {
+     color: var(--gray-text);
+     margin-bottom: 20px;
+   }
+
+   .regulasi-card {
+     background: var(--white);
+     border-radius: var(--radius);
+     box-shadow: var(--shadow);
+     padding: 22px 26px;
+     display: flex;
+     align-items: center;
+     gap: 18px;
+     text-align: left;
+     max-width: 760px;
+     margin: 0 auto;
+   }
+
+   .regulasi-icon {
+     font-size: 2.4rem;
+     flex-shrink: 0;
+     background: var(--green-bg);
+     width: 64px;
+     height: 64px;
+     border-radius: 12px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+
+   .regulasi-info { flex: 1; }
+   .regulasi-info h3 { color: var(--navy); font-size: 1.02rem; margin-bottom: 4px; }
+   .regulasi-info p { color: var(--gray-text); font-size: 0.88rem; margin: 0; }
+
+   .regulasi-actions {
+     display: flex;
+     flex-direction: column;
+     gap: 8px;
+     flex-shrink: 0;
+   }
+
+   .btn-regulasi {
+     display: inline-block;
+     white-space: nowrap;
+     text-decoration: none;
+     font-size: 0.85rem;
+     font-weight: 600;
+     padding: 9px 16px;
+     border-radius: 8px;
+     background: var(--green-primary);
+     color: var(--white);
+     transition: background 0.2s;
+   }
+   .btn-regulasi:hover { background: #0D47A1; }
+
+   .btn-regulasi-outline {
+     background: transparent;
+     color: var(--green-primary);
+     border: 1.5px solid var(--green-primary);
+   }
+   .btn-regulasi-outline:hover { background: var(--green-bg); }
+
+   @media (max-width: 640px) {
+     .regulasi-card { flex-direction: column; text-align: center; }
+     .regulasi-actions { flex-direction: row; }
    }
    .about-card:hover { transform: translateY(-3px); }
    .about-icon { font-size: 2.8rem; margin-bottom: 14px; }
